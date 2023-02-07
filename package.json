@@ -1,0 +1,26 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Mind Games project for hexlet, first of many",
+  "main": "bin/brain-games.js",
+  "bin": {
+   "brain-games": "bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zhostt/frontend-project-44.git"
+  },
+  "keywords": [
+    "firstProject"
+  ],
+  "author": "Zhostt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zhostt/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/Zhostt/frontend-project-44#readme"
+}
