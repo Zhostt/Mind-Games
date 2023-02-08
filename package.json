@@ -5,7 +5,7 @@
   "description": "Mind Games project for hexlet, first of many",
   "main": "bin/brain-games.js",
   "bin": {
-   "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js"
   },
   "scripts": {
     "test": "test"
@@ -22,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/Zhostt/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/Zhostt/frontend-project-44#readme"
+  "homepage": "https://github.com/Zhostt/frontend-project-44#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
 }
