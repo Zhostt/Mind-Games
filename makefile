@@ -5,6 +5,6 @@ brain-game:
 vs:
 	code bin/brain-games.js
 publish:
-	 npm publish --dry-ru
+	 npm publish --dry-run
 lint:
-	npx eslintn .
+	npx eslint .
