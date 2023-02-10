@@ -59,10 +59,10 @@ const generateAnswer = () => {
 };
 
 const questionCalc = () => {
-  console.log(`${number1} ${mathSymbol} ${number2}`);
+  console.log(`Question: ${number1} ${mathSymbol} ${number2}`);
 };
 
-// общая фия
+// общая фия, UserAnswer определяется у каждой отдельно
 const answerGetEvaluate = () => {
   userAnswer = Number(readlineSync.question('Your answer: '));
   if (userAnswer === correctAnswer) {
@@ -99,5 +99,3 @@ const startCalcGame = () => {
 };
 
 export default startCalcGame;
-
-startCalcGame();

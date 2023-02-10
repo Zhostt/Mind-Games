@@ -73,5 +73,3 @@ const startEvenGame = () => {
 };
 
 export default startEvenGame;
-
-startEvenGame();
