@@ -7,4 +7,6 @@ Here is ascinema link to my first 'Even or Odd' game in its glorious action: htt
 
 And this one is for the new AAA-blockbuster 'CALCULATOR': https://asciinema.org/a/558828
 
+And here comes the Greatest Common Divider game which is absolutely 10/10: https://asciinema.org/a/558871
+
 Live and drink, friend!
