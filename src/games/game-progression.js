@@ -7,19 +7,19 @@ let name = '';
 let userAnswer = '';
 let score = 0;
 
-// specific variables for calc
+// specific variables for progression
 let correctAnswer = 0;
 let progString = '';
 
 // общая фия
 const greeting = () => {
-  console.log('brain-games\nWelcome to the Brain Games!');
+  console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 };
 
-const taskCalc = () => {
-  console.log('What is the result of the expression?');
+const taskProg = () => {
+  console.log('What number is missing in the progression?');
 };
 
 // общая фия
@@ -72,9 +72,8 @@ const failProgression = () => {
 
 const startProgressionGame = () => {
   greeting();
-  taskCalc();
+  taskProg();
   for (let round = 1; round <= 3; round += 1) {
-    getRandomInt();
     generateProgression();
     questionProgression();
     if (answerGetEvaluate() === false) {

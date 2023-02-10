@@ -10,8 +10,8 @@ let userAnswer = '';
 let score = 0;
 let name = '';
 
-export const greeting = () => {
-  console.log('brain-games\nWelcome to the Brain Games!');
+const greeting = () => {
+  console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 };
@@ -23,7 +23,8 @@ const taskEven = () => {
 const getRandomInt = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (max - min) + min);
+  // The maximum is exclusive and the minimum is inclusive
 };
 
 const createNumberSetEvenity = () => {
@@ -39,7 +40,7 @@ const questionEven = () => {
   console.log(`Question: ${number}`);
 };
 
-export const answerGetEvaluate = () => {
+const answerGetEvaluate = () => {
   userAnswer = readlineSync.question('Your answer: ');
   if (userAnswer === correctAnswer) {
     console.log('Correct!');
@@ -47,21 +48,26 @@ export const answerGetEvaluate = () => {
   }
   // eslint-disable-next-line no-else-return
   else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-    Let's try again, ${name}!`);
     return false;
   }
+};
+
+const failEven = () => {
+  console.log(`Your answer: ${userAnswer}`);
+  questionEven();
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+  Let's try again, ${name}!`);
 };
 
 const startEvenGame = () => {
   greeting();
   taskEven();
   for (let round = 1; round <= 3; round += 1) {
-    getRandomInt();
     createNumberSetEvenity();
     questionEven();
     // answerGetEvaluate();   actually starts in if check below
     if (answerGetEvaluate() === false) {
+      failEven();
       break;
     } else {
       score += 1;

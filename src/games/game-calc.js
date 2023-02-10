@@ -15,7 +15,7 @@ let correctAnswer = 0;
 
 // общая фия
 const greeting = () => {
-  console.log('brain-games\nWelcome to the Brain Games!');
+  console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 };
@@ -86,7 +86,6 @@ const startCalcGame = () => {
   greeting();
   taskCalc();
   for (let round = 1; round <= 3; round += 1) {
-    getRandomInt();
     generateNumbers();
     generateMathSign();
     generateAnswer();
