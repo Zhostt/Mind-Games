@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Mind Games project for hexlet, first of many",
-  "main": "bin/brain-games.js",
+  "main": "src/index.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js"
