@@ -8,10 +8,8 @@ let userAnswer = '';
 let score = 0;
 
 // specific variables for calc
-let number1 = 0;
-let number2 = 0;
-let mathSymbol = '';
 let correctAnswer = 0;
+let progString = '';
 
 // общая фия
 const greeting = () => {
@@ -32,34 +30,24 @@ const getRandomInt = (min, max) => {
   // The maximum is exclusive and the minimum is inclusive
 };
 
-const generateNumbers = () => {
-  number1 = getRandomInt(-20, 20);
-  number2 = getRandomInt(-20, 20);
-};
-
-const generateMathSign = () => {
-  const signNumber = getRandomInt(1, 4);
-  if (signNumber === 1) {
-    mathSymbol = '+';
-  } else if (signNumber === 2) {
-    mathSymbol = '-';
-  } else if (signNumber === 3) {
-    mathSymbol = '*';
+const generateProgression = () => {
+  const progFirstItem = getRandomInt(0, 50);
+  const progDifference = getRandomInt(1, 10);
+  const progLength = getRandomInt(5, 15);
+  const progIndexes = progLength - 1;
+  const questionIndex = getRandomInt(0, progIndexes);
+  const progression = [progFirstItem];
+  for (let index = 1; index <= progLength - 1; index += 1) {
+    const previousItem = progression[index - 1];
+    progression.push(previousItem + progDifference);
   }
+  correctAnswer = progression[questionIndex];
+  progression[questionIndex] = '..';
+  progString = progression.join(' ');
 };
 
-const generateAnswer = () => {
-  if (mathSymbol === '+') {
-    correctAnswer = number1 + number2;
-  } else if (mathSymbol === '-') {
-    correctAnswer = number1 - number2;
-  } else if (mathSymbol === '*') {
-    correctAnswer = number1 * number2;
-  }
-};
-
-const questionCalc = () => {
-  console.log(`Question: ${number1} ${mathSymbol} ${number2}`);
+const questionProgression = () => {
+  console.log(`Question: ${progString}`);
 };
 
 // общая фия, UserAnswer определяется у каждой отдельно
@@ -75,25 +63,22 @@ const answerGetEvaluate = () => {
   }
 };
 
-const failCalc = () => {
+const failProgression = () => {
   console.log(`Your answer: ${userAnswer}`);
-  questionCalc();
+  questionProgression();
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-  Let's try again, ${name}!`);
+      Let's try again, ${name}!`);
 };
 
-const startCalcGame = () => {
+const startProgressionGame = () => {
   greeting();
   taskCalc();
   for (let round = 1; round <= 3; round += 1) {
     getRandomInt();
-    generateNumbers();
-    generateMathSign();
-    generateAnswer();
-    questionCalc();
-    // answerGetEvaluate();
+    generateProgression();
+    questionProgression();
     if (answerGetEvaluate() === false) {
-      failCalc();
+      failProgression();
       break;
     } else {
       score += 1;
@@ -104,4 +89,4 @@ const startCalcGame = () => {
   }
 };
 
-export default startCalcGame;
+export default startProgressionGame;

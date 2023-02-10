@@ -9,4 +9,8 @@ And this one is for the new AAA-blockbuster 'CALCULATOR': https://asciinema.org/
 
 And here comes the Greatest Common Divider game which is absolutely 10/10: https://asciinema.org/a/558871
 
+Finally last, but not least, the boss of brain games - Progression game!  https://asciinema.org/a/558898
+
+Thank you much for your attention. 
+
 Live and drink, friend!

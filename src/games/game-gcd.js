@@ -62,10 +62,15 @@ const answerGetEvaluate = () => {
   }
   // eslint-disable-next-line no-else-return
   else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-    Let's try again, ${name}!`);
     return false;
   }
+};
+
+const failGCD = () => {
+  console.log(`Your answer: ${userAnswer}`);
+  questionGCD();
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+  Let's try again, ${name}!`);
 };
 
 const startGCDGame = () => {
@@ -77,6 +82,7 @@ const startGCDGame = () => {
     getDivisor();
     questionGCD();
     if (answerGetEvaluate() === false) {
+      failGCD();
       break;
     } else {
       score += 1;
