@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable prefer-const */
+/* eslint-disable import/extensions */
 
 import readlineSync from 'readline-sync';
 // import { greeting, answerGetEvaluate } from '../index.js';
