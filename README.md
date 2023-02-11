@@ -9,7 +9,7 @@ Minimal requirements: PC, brain.
 
 How to install: just grab the project directory
 
-How to lauch: through bin-files with game names. Also you can type game-gamename (even, progression, gcd, prome, calc) in command promt to launch.
+How to lauch: through bin-files with game names. Also you can type game-gamename (even, progression, gcd, prime, calc) in command promt to launch.
 
 
 Here is ascinema link to my first 'Even or Odd' game in its glorious action: https://asciinema.org/a/cjGcfiLnt8iYHHysRE9OEUzDj
