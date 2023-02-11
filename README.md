@@ -3,7 +3,7 @@
 
 Sup, this is my first project. 
 
-In contains 5 classic brain-games to train you brain and enjoy my programming skills.
+In contains 5 classic brain-games to train your brain and enjoy my programming skills.
 
 Minimal requirements: PC, brain.
 
