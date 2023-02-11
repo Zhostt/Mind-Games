@@ -17,6 +17,8 @@ parserOptions:
 
 rules:
   no-console: 0
+  linebreak-style: 0
+  prefer-const: 0
   import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
     - ignorePackages

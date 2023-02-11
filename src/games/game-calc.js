@@ -1,45 +1,24 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable prefer-const */
-/* eslint-disable import/extensions */
+import * as commonFunc from '../index.js';
 
-import readlineSync from 'readline-sync';
-// global variables
 let name = '';
 let userAnswer = '';
 let score = 0;
-
-// specific variables for calc
 let number1 = 0;
 let number2 = 0;
 let mathSymbol = '';
 let correctAnswer = 0;
 
-// общая фия
-const greeting = () => {
-  console.log('Welcome to the Brain Games!');
-  name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-};
-
 const taskCalc = () => {
   console.log('What is the result of the expression?');
 };
 
-// общая фия
-const getRandomInt = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min);
-  // The maximum is exclusive and the minimum is inclusive
-};
-
 const generateNumbers = () => {
-  number1 = getRandomInt(-20, 20);
-  number2 = getRandomInt(-20, 20);
+  number1 = commonFunc.getRandomInt(-20, 20);
+  number2 = commonFunc.getRandomInt(-20, 20);
 };
 
 const generateMathSign = () => {
-  const signNumber = getRandomInt(1, 4);
+  const signNumber = commonFunc.getRandomInt(1, 4);
   if (signNumber === 1) {
     mathSymbol = '+';
   } else if (signNumber === 2) {
@@ -63,36 +42,22 @@ const questionCalc = () => {
   console.log(`Question: ${number1} ${mathSymbol} ${number2}`);
 };
 
-// общая фия, UserAnswer определяется у каждой отдельно
-const answerGetEvaluate = () => {
-  userAnswer = Number(readlineSync.question('Your answer: '));
-  if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  // eslint-disable-next-line no-else-return
-  else {
-    return false;
-  }
-};
-
 const failCalc = () => {
-  console.log(`Your answer: ${userAnswer}`);
   questionCalc();
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-  Let's try again, ${name}!`);
+  console.log(`Your answer: ${userAnswer}`);
+  commonFunc.failMessageLastPart(userAnswer, correctAnswer, name);
 };
 
 const startCalcGame = () => {
-  greeting();
+  name = commonFunc.greeting();
   taskCalc();
   for (let round = 1; round <= 3; round += 1) {
     generateNumbers();
     generateMathSign();
     generateAnswer();
     questionCalc();
-    // answerGetEvaluate();
-    if (answerGetEvaluate() === false) {
+    userAnswer = commonFunc.getAnswerNum();
+    if (commonFunc.evaluateAnswer(userAnswer, correctAnswer) === false) {
       failCalc();
       break;
     } else {
@@ -100,7 +65,7 @@ const startCalcGame = () => {
     }
   }
   if (score === 3) {
-    console.log(`Congratulations, ${name}!`);
+    commonFunc.victoryMessage(name);
   }
 };
 
