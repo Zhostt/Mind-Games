@@ -1,7 +1,16 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Zhostt/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Zhostt/frontend-project-44/actions)
 
-Sup, this is my first project. Truly cool stuff.
+Sup, this is my first project. 
+
+In contains 5 classic brain-games to train you brain and enjoy my programming skills.
+
+Minimal requirements: PC, brain.
+
+How to install: just grab the project directory
+
+How to lauch: through bin-files with game names. Also you can type game-gamename (even, progression, gcd, prome, calc) in command promt to launch.
+
 
 Here is ascinema link to my first 'Even or Odd' game in its glorious action: https://asciinema.org/a/cjGcfiLnt8iYHHysRE9OEUzDj
 
